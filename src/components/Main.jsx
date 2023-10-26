@@ -1,9 +1,15 @@
 import { useState } from "react";
 import Statbox from "./StatBox";
-import Graph from "./Graph";
+import Graphbox from "./Graphbox";
+import Popup from "./Popup";
 
-const Main = ({rank, percent, correctAnswer}) => {
+const Main = ({ rank, percent, correctAnswer, updateStates }) => {
 
+    const [isOpen, setIsOpen] = useState(false);
+
+    function togglePopup(){
+        setIsOpen(!isOpen); 
+    }
 
     return (
         <main>
@@ -17,7 +23,14 @@ const Main = ({rank, percent, correctAnswer}) => {
                         <p className="skill_test_heading">Questions: 08 | Duration: 15 mins | Submitted on 5 June 2021</p>
                     </div>
                 </div>
-                <button className="save_btn">Update</button>
+
+                <button className="save_btn" onClick={togglePopup}>Update</button>
+
+                {isOpen && <Popup
+                    togglePopup ={togglePopup}
+                    updateStates={updateStates}
+                />}
+
             </div>
 
             <div className="box stats">
@@ -44,7 +57,7 @@ const Main = ({rank, percent, correctAnswer}) => {
                 </div>
             </div>
 
-            <Graph 
+            <Graphbox 
                 percent = {percent}
             />
 

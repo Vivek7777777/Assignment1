@@ -11,6 +11,15 @@ function App() {
   const [percent, setPercent] = useState(37);
   const [correctAnswer, setCorrenctAnswer] = useState(7);
 
+  function updateStates(x,y,z){
+    if(x)
+    setRank(x);
+    if(y)
+    setPercent(y);
+    if(z)
+    setCorrenctAnswer(z);
+  }
+
   return (
     <div className="app">
       <Navbar />
@@ -21,6 +30,7 @@ function App() {
           rank = {rank}
           percent={percent}
           correctAnswer={correctAnswer}
+          updateStates={updateStates}
         />
         <Rightsidebar 
           correctAnswer = {correctAnswer}
