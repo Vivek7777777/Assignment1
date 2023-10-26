@@ -1,11 +1,9 @@
 import { useState } from "react";
 import Statbox from "./StatBox";
+import Graph from "./Graph";
 
-const Main = () => {
+const Main = ({rank, percent, correctAnswer}) => {
 
-    const [rank, setRank] = useState("12,890");
-    const [percent, setPercent] = useState(37);
-    const [correctAnswer, setCorrenctAnswer] = useState(7)
 
     return (
         <main>
@@ -42,10 +40,13 @@ const Main = () => {
                         img = "/check.png"
                         value = {correctAnswer}
                         text = "CORRECT ANSWERS"
-                    />
-                    
+                    />  
                 </div>
             </div>
+
+            <Graph 
+                percent = {percent}
+            />
 
         </main>
     )

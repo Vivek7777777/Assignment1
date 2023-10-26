@@ -18,6 +18,25 @@ code {
     sans-serif;
 }
 
+@keyframes fillbar1 {
+  from {width: 0;}
+  to {width: 80%;}
+}
+@keyframes fillbar2{
+  from {width: 0;}
+  to {width: 60%;}
+}
+@keyframes fillbar3 {
+  from {width: 0;}
+  to {width: 24%;}
+}
+@keyframes fillbar4 {
+  from {width: 0;}
+  to {width: 96%;}
+}
+
+
+
 
 /* navbar */
 
@@ -198,7 +217,6 @@ button{
 /* SIDEBAR */
 
 aside{
-  height: 100vh;
   width: 200px;
   border-right: 1px solid rgb(194, 193, 193);
   padding: 50px 30px 0 0;
@@ -317,4 +335,102 @@ main{
 
 .stats_data > p{
   opacity: .6;
+}
+
+
+/* Comparison Graph */
+
+
+
+.graph_top{
+  display: grid;
+  grid-template-columns: 85% 15%;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.graph_description{
+  padding: 1rem 0 0;
+  font-size: 14px;
+  color: rgb(85, 85, 85);
+}
+
+.graph_description > span{
+  color: rgb(72, 72, 72);
+  font-weight: 600;
+}
+
+.line_graph{
+  height: 20rem;
+}
+
+
+
+
+
+/* RIGHT SIDEBAR */
+
+.right_sidebar{
+  width: 25%;
+  margin-top: 45px;
+}
+
+.syllabus_box{
+  /* border: 2px solid black; */
+  margin: 25px 0 0;
+}
+
+.syllabus_heading{
+  color: rgb(69, 69, 69);
+  margin: 10px 0;
+}
+
+.syllabus_score{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.syllabus_bar{
+  position: relative;
+  width: 200px;
+  height: 10px;
+  border-radius: 1rem;
+  background-color: rgba(13, 92, 212, .2);
+}
+
+.syllabus_bar_fill{
+  position: absolute;
+  height: 100%;
+  border-radius: 1rem;
+  background-color: #ff000030;
+}
+
+.fill1{
+  animation: fillbar1 1s linear;
+}
+
+.fill2{
+  animation: fillbar2 1s linear;
+}
+
+.fill3{
+  animation: fillbar3 1s linear;
+}
+
+.fill4{
+  animation: fillbar4 1s linear;
+}
+
+.syllabus_score_value{
+  color: rgb(67, 138, 246);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+
+/* question analysis */
+
+.question_analysis > p{
+  
 }
